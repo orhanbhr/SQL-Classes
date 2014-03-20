@@ -51,3 +51,5 @@ $whereOdds = array(
 );
 
 $SQL->Update('odds', $setOdds, $whereOdds);</code></pre>
+
+<p>Şuanda gördüğünüz class'ın ilk versiyonudur gelişim süreçleri olacaktır.</p>
