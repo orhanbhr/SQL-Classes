@@ -14,3 +14,18 @@ Dosyamıza Class'ımızı çağırmak için require_once fonksiyonunu kullanıor
 <pre><code>foreach( $SQL->Select('odds') as $o){
 echo $o['oran_adi'].'&lt;br />';
 }</code></pre>
+
+<p>Insert Kullanımı : </p>
+<pre><code>$newOdds = array(
+  'mac_id' => '123123',
+  'oran_tur' => 'MS',
+  'oran_adi' => 'Maç Bahsi',
+  'oran1' => '1.85',
+  'oran1_aciklama' => 'Beşiktaş',
+  'oran0' => '2.25',
+  'oran0_aciklama' => 'Beraberlik',
+  'oran2' => '3.15',
+  'oran2_aciklama' => 'Fenerbahçe'
+);
+
+$SQL->Insert($newOdds, 'odds');</code></pre>
