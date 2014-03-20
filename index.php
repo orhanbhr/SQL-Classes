@@ -6,6 +6,6 @@
   
   
   # Class dosyamızı sayfamıza çağırıyoruz...
-	require_once("class.sql.php");
+  require_once("class.sql.php");
 	
 	
