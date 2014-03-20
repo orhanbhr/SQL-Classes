@@ -38,3 +38,16 @@ $SQL->Insert($newOdds, 'odds');</code></pre>
 );
 	
 $SQL->Delete('odds', $deleteOdds);</code></pre>
+
+<p>Update Kullanımı : </p>
+<pre><code>$setOdds = array(
+	'oran1' => '55.2',
+	'oran0' => '12.5',
+	'oran2' => '8.25'
+);
+
+$whereOdds = array(
+	'id' => '237'
+);
+
+$SQL->Update('odds', $setOdds, $whereOdds);</code></pre>
