@@ -1,4 +1,4 @@
-SQL-Classes
+PHP MySQL Classes
 ===========
 
 Dosyamıza Class'ımızı çağırmak için require_once fonksiyonunu kullanıoruz. <br />
@@ -6,3 +6,11 @@ Dosyamıza Class'ımızı çağırmak için require_once fonksiyonunu kullanıor
 
 <p>Class'ı çağırmak için aşağıdaki kod parçacığını kullanıyoruz.</p>
 <code>$SQL = new SQL();</code>
+
+<p>Select Kullanımı : </p>
+<code>print_r( $SQL->Select('odds') );</code>
+
+<p>Select Kullanarak Listelemek</p>
+<code>foreach( $SQL->Select('odds') as $o){
+		echo $o['oran_adi'].'<br />';
+	}</code>
