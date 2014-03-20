@@ -29,3 +29,12 @@ echo $o['oran_adi'].'&lt;br />';
 );
 
 $SQL->Insert($newOdds, 'odds');</code></pre>
+
+<p>Delete Kullanımı : </p>
+<pre><code>$deleteOdds = array(
+  'id' => '234',
+  'oran_tur' => 'S',
+  'oran1' => '1.85'
+);
+	
+$SQL->Delete('odds', $deleteOdds);</code></pre>
