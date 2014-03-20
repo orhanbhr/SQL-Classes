@@ -7,5 +7,9 @@
   
   # Class dosyamızı sayfamıza çağırıyoruz...
   require_once("class.sql.php");
-	
-	
+  
+  /*
+  
+  Class'ın kullanımı ile ilgili olarak readme dosyasını inceleyiniz...
+  
+  */
