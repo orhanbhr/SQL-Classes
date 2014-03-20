@@ -1,7 +1,7 @@
 PHP MySQL Classes
 ===========
 
-Dosyamıza Class'ımızı çağırmak için require_once fonksiyonunu kullanıoruz. <br />
+Dosyamıza Class'ımızı çağırmak için require_once fonksiyonunu kullanıyoruz. <br />
 <code>require_once("class.sql.php");</code>
 
 <p>Class'ı çağırmak için aşağıdaki kod parçacığını kullanıyoruz.</p>
