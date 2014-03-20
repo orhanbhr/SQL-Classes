@@ -5,7 +5,7 @@
   # PHP MySQL Classes (INSERT, UPDATE, SELECT, QUERY, ROWS) #
 
 class SQL {
-	
+		
 	var $arrayResult;
 	
 	# MySQL Query #
@@ -95,5 +95,37 @@ class SQL {
 	}
 	
 	# MySQL UPDATE #
+	public function Update($tablo, $set, $kosul, $exclude = ''){
+		if(trim($tablo) == '' || !is_array($set) || !is_array($kosul)){
+			return false;
+		}
+		if($exclude == ''){
+			$exclude = array();
+		}
 		
+		array_push($exclude, 'MAX_FILE_SIZE');
+
+		$sql = "UPDATE `{$tablo}` SET ";
+		
+		foreach($set as $key=>$value){
+			if(in_array($key, $exclude)){
+				continue;
+			}
+			$sql .= "`{$key}` = '{$value}', ";
+		}
+
+		$sql = substr($sql, 0, -2);
+
+		$sql .= ' WHERE ';
+	
+		foreach($kosul as $key=>$value){
+			$sql .= "`{$key}` = '{$value}' AND ";
+		}
+	
+		$sql = substr($sql, 0, -5);
+	
+		return mysql_query($sql);
+	
+	}
+	
 }
