@@ -11,6 +11,6 @@ Dosyamıza Class'ımızı çağırmak için require_once fonksiyonunu kullanıor
 <code>print_r( $SQL->Select('odds') );</code>
 
 <p>Select Kullanarak Listelemek</p>
-<code>foreach( $SQL->Select('odds') as $o){
+<pre><code>foreach( $SQL->Select('odds') as $o){
 echo $o['oran_adi'].'<br />';
-}</code>
+}</code></pre>
