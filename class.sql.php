@@ -7,6 +7,12 @@
 class SQL {
 		
 	var $arrayResult;
+
+	function __construct($database, $username, $password, $hostname='localhost', $port=3306){
+		$con = mysql_connect($hostname.":".$port, $username, $password) or die(mysql_error());
+		mysql_select_db($database, $con) or die(mysql_error());
+		mysql_query("SET NAMES utf8");
+	}
 	
 	# MySQL Query #
 	private function Query($query){
