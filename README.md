@@ -5,7 +5,7 @@ Dosyamıza Class'ımızı çağırmak için require_once fonksiyonunu kullanıyo
 <code>require_once("class.sql.php");</code>
 
 <p>Class'ı çağırmak için aşağıdaki kod parçacığını kullanıyoruz.</p>
-<code>$SQL = new SQL();</code>
+<code>$SQL = new SQL(DBNAME, DBUSER, DBPASS);</code>
 
 <p>Select Kullanımı : </p>
 <code>print_r( $SQL->Select('odds') );</code>
@@ -53,3 +53,4 @@ $whereOdds = array(
 $SQL->Update('odds', $setOdds, $whereOdds);</code></pre>
 
 <p>Şuanda gördüğünüz class'ın ilk versiyonudur gelişim süreçleri olacaktır.</p>
+<p>Class'ımıza veritabanı bağlantısı ekledim. Sizlerde bir sıkıntı gördüğünüzde beni bilgilendirirseniz daha iyi geliştirme sağlayabilirim.</p>
