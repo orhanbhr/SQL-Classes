@@ -8,6 +8,7 @@ class SQL {
 		
 	var $arrayResult;
 
+	# v2 sürümünde veritabanı bağlantısı ekledim, class'ı kullanan arkadaşlar veritabanı bağlantısı nasıl yaparız diye sordu fakettim bende eklememişim ama bu sürümde ekledim. #
 	function __construct($database, $username, $password, $hostname='localhost', $port=3306){
 		$con = mysql_connect($hostname.":".$port, $username, $password) or die(mysql_error());
 		mysql_select_db($database, $con) or die(mysql_error());
