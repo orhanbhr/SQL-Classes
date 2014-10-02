@@ -30,6 +30,15 @@ echo $o['oran_adi'].'&lt;br />';
 
 $SQL->Insert($newOdds, 'odds');</code></pre>
 
+<p>Rows Kullanımı : </p>
+<pre><code>$whereClient = array(
+	'ip' => $Base->_SERVER('REMOTE_ADDR')
+);
+
+$SQL->Rows('clients', $whereClient)</code></pre>
+
+<p>Rows'un çıktısı 1 yada 0 olarak yani true yada false gibi çıkacaktır. Not : mysql_num_rows çıktısı kısacası.</p>
+
 <p>Delete Kullanımı : </p>
 <pre><code>$deleteOdds = array(
   'id' => '234',
