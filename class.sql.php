@@ -26,8 +26,36 @@ class SQL {
 	}
 	
 	# MySQL Rows #
-	private function Rows($rows){
-		return mysql_num_rows(mysql_query($rows));
+	public function Rows($from, $kosul = '', $orderby = '', $limit = '', $like = false, $pr = 'AND', $select = '*'){          
+		if(trim($from) == ''){
+		    return false;
+		}
+		
+		$sql = "SELECT {$select} FROM `{$from}` WHERE ";
+		
+		if(is_array($kosul) && $kosul != ''){
+		    foreach($kosul as $key=>$value){
+		        if($like){
+		            $sql .= "`{$key}` LIKE '%{$value}%' {$pr} ";
+		        }else{
+		            $sql .= "`{$key}` = '{$value}' {$pr} ";
+		        }
+		    }
+		    
+		    $sql = substr($sql, 0, -(strlen($pr)+2));
+		}else{  
+		    $sql = substr($sql, 0, -7);
+		}
+		
+		if($orderby != ''){
+		    $sql .= ' ORDER BY ' . $orderby;
+		}
+		
+		if($limit != ''){
+		    $sql .= ' LIMIT ' . $limit;
+		}
+		
+		return mysql_num_rows(mysql_query($sql));
 	}
 	
 	# MySQL SELECT #
